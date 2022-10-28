@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import StoreCards from "./storecards";
 import Navbar from "../navbar";
+import Mobilecard from "./mobilecard";
 // import useSWR from 'swr';
 
 const All = (props) => {
@@ -48,7 +49,7 @@ const All = (props) => {
         </div>
       )}
 
-      <div className='py-auto mx-auto mt-10 grid h-96 lg:w-5/6 w-full lg:grid-cols-2 items-center gap-2'>
+      <div className='py-auto mx-auto mt-10 lg:grid h-96 lg:w-5/6 w-full hidden lg:grid-cols-2 items-center gap-2'>
         {data.map((items) => (
           <StoreCards
             key={items.id}
@@ -60,6 +61,15 @@ const All = (props) => {
             handle={handleCart}
           />
         ))}
+      </div>
+      <div className="grid lg:grid-cols-2 w-full items-center gap-4">
+          {data.map((item) =>(
+            <Mobilecard
+              itemimage={item.image}
+              itemtitle={item.title}
+              itemprice={item.price}
+            />
+          ))}
       </div>
     </div>
   );
