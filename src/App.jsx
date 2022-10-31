@@ -4,6 +4,7 @@ import All from "./components/itemslist/all";
 import Cartcard from "./components/itemslist/cartcard";
 import Login from "./components/login";
 import Navbar from "./components/navbar";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 function App() {
   const baseUrl = "https://fakestoreapi.com/products";
@@ -23,13 +24,9 @@ function App() {
     console.log(id);
   };
 
-  const handleCart = () => {
-    if (cartCount > 0) {
-      setCart(!cart);
-    } else {
-      console.log("You have an empty cart...");
-    }
-  };
+  // const handleCartIncrease = () => {
+  //   console.log('me')
+  // };
 
   // const updateCount = () => {
   //   console.log('Kaytwolea')
@@ -61,14 +58,16 @@ function App() {
           </div> */}
         </div>
       </div>
+      <SkeletonTheme  baseColor="#202020" highlightColor="#444">
       {token ? (
-        <All />
+        <All  />
       ) : (
         <Login
           token={token}
           setToken={setToken}
         />
       )}
+      </SkeletonTheme>
     </div>
   );
 }

@@ -22,7 +22,6 @@ function StoreCards(props) {
           {props.description}
         </p>
         <button
-          onClick={() => props.handle(props.id)}
           className='lg:absolute right-0 bottom-0 mb-2 h-8 w-72 rounded-3xl bg-teal-700 font-bold text-white  shadow-md shadow-yellow-200'>
           Add to Cart
         </button>

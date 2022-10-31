@@ -76,6 +76,11 @@ const Login = ({ token, setToken }) => {
           </div>
         </div>
       </div>
+      <p className="text-base text-center text-black">
+        Login details: 
+        Username: johnd
+        password: m38rmF$
+      </p>
     </div>
   );
 };
